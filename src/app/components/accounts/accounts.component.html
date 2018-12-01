@@ -2,7 +2,9 @@
 
 	<div class="formContent" style="width: 90%; height: 500px;">
 		<div style="text-align: right;">
-			<button type="button" class="btn btn-default" (click)="goToLogin()" >Logout</button>
+			<button type="button" class="btn btn-default" (click)="goToLogin()" >
+				<i class="fa fa-sign-out"></i> Cerrar sesión
+			</button>
 		</div>
 
 		<div class="row">
@@ -80,11 +82,15 @@
 					
 
 					<div style="display: inline-flex; width: 100%; justify-content: flex-end; padding-top: 20px;">
-						<button type="button" class="btn btn-danger" (click)="cancel()" >Cancelar</button>
+						<button type="button" class="btn btn-danger" (click)="cancel()" >
+							<i class="fa fa-times"></i> Cancelar
+						</button>
 						
 						<div style="width: 20px;"></div>
 						
-						<button type="submit" class="btn btn-primary" >Crear</button>
+						<button type="submit" class="btn btn-primary" >
+							<i class="fa fa-save"></i> Crear
+						</button>
 					</div>
 
 				</form>

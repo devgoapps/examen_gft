@@ -13,6 +13,7 @@ import { AccountsComponent } from './components/accounts/accounts.component';
 
 // Services
 import { HttpService } from './services/http.service';
+import { AuthGuardService } from './services/auth-guard.service';
 import { SweetAlertService } from './services/sweet-alert.service';
 
 // Router
@@ -33,6 +34,7 @@ import { AppRouter } from './app.router';
   ],
   providers: [
     HttpService,
+    AuthGuardService,
     SweetAlertService
   ],
   bootstrap: [AppComponent]

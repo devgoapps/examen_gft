@@ -1,0 +1,74 @@
+<div class="mainContent" >
+
+	<div class="formContent" >
+		<form 	#form="ngForm" (ngSubmit)="form.valid ? register(): ''"
+				novalidate autocomplete="off" >
+
+			<div class="form-group">
+				<label class="required" >Email</label>
+				<input 	[(ngModel)]="user.email" #femail="ngModel" 
+						type="email" name="femail" class="form-control" placeholder="Introduce tu email" 
+						[pattern]="emailPattern" required >
+
+				<div class="validation" *ngIf="form.submitted && femail.errors" >
+	                <span [hidden]="!femail.errors.required" >
+	                  	El email es requerido.
+	                </span>
+	                <div [hidden]="!femail.errors.pattern" >
+						El formato del correo electrónico no es válido.
+					</div>
+	            </div>
+			</div>
+
+			<div class="form-group">
+				<label class="required" >Firstname</label>
+				<input  [(ngModel)]="user.firstname" #ffirstname="ngModel" 
+						type="text" name="ffirstname" class="form-control" placeholder="Introduce tu nombre" 
+						required >
+
+				<div class="validation" *ngIf="form.submitted && ffirstname.errors" >
+	                <span [hidden]="!ffirstname.errors.required" >
+	                  	El nombre es requerido.
+	                </span>
+	            </div>
+			</div>
+
+
+			<div class="form-group">
+				<label class="required" >Lastname</label>
+				<input  [(ngModel)]="user.lastname" #flastname="ngModel" 
+						type="text" name="flastname" class="form-control" placeholder="Introduce tu apellido" 
+						required >
+
+				<div class="validation" *ngIf="form.submitted && flastname.errors" >
+	                <span [hidden]="!flastname.errors.required" >
+	                  	El apellido es requerido.
+	                </span>
+	            </div>
+			</div>
+
+			<div class="form-group">
+				<label class="required" >Password</label>
+				<input  [(ngModel)]="user.password" #fpassword="ngModel" 
+						type="password" name="fpassword" class="form-control" placeholder="Introduce tu password" 
+						required >
+
+				<div class="validation" *ngIf="form.submitted && fpassword.errors" >
+	                <span [hidden]="!fpassword.errors.required" >
+	                  	El password es requerido.
+	                </span>
+	            </div>
+			</div>
+
+			<div style="display: inline-flex; width: 100%; justify-content: flex-end; padding-top: 20px;">
+				<button type="button" class="btn btn-danger" (click)="goToLogin()" >Cancelar</button>
+				
+				<div style="width: 20px;"></div>
+				
+				<button type="submit" class="btn btn-primary" >Registar</button>
+			</div>
+
+		</form>
+	</div>
+
+</div>

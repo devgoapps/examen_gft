@@ -54,7 +54,7 @@ export class AccountsComponent implements OnInit {
 
   		this.httpService.buildPostRequest('accounts', this.account)
   			.subscribe((data) => {
-
+  				this.cancel();
   				this.swaService.success('Cuenta creada', 'La cuenta se creo correctamente, favor de esperar 24 hrs. para su aprovación.');
   			}, (error) => {
   				this.swaService.error('Ocurrió un problema', error.success);
